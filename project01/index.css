@@ -1,1 +1,14 @@
-p {color: #00FF00;}
+#links a {
+	color: #FFFFFF;
+	text-decoration:none;
+	font-family:sans-serif;
+}
+body {
+	font-size:150%;
+
+}
+ul {
+	background-color:black;
+	list-style-type:none;
+
+}
