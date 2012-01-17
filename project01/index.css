@@ -41,17 +41,24 @@ ul {
 	list-style-type:none;
 	width: 104%;
 	margin-top: 0%;
-	margin-left: -5%;
+	margin-left: -45px;
 }
 
 #links li {
 	float: left;
 	text-align: center;
-	width: 9%;
-	margin: 10px 5px 10px 0px;
+	width: 85px;
+	margin: 10px 0px 10px 0px;
 	display: block;
 }
 
+#professional {
+	margin-left: 15px;
+}
+
+#fun {
+	margin-left: 45px;
+}
 
 
 #floating_body {
@@ -78,12 +85,10 @@ ul {
 #internal_header {
 	font-size: 150%;
 	font-weight: bold;
-
-	
-
 }
 
 #progress_in_life_box {
+	padding: 5px;
 	float: right;
 	margin-right: 25px;
 	background-color: #F0F0FF;
@@ -121,6 +126,7 @@ ul {
 #footer {
 	position:absolute;
 	margin-top: 349px;
+	font-size: 80%;
 	text-align: center;
 	width: 100%;
 	height: 22px;

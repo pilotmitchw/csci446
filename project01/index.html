@@ -2,6 +2,7 @@
 	<head>
 		<title>Life Figure-Outer Application</title>
 		<link rel="stylesheet" type="text/css" href="index.css" />
+		<script type="text/javascript" src="index.js"></script>
 	</head>
 	
 	<body>
@@ -12,41 +13,41 @@
 
 				<ul id="links">
 					<li>
-						<a href="">Home</a>
+						<a id="home" href="#link" title="Where the heart is!">Home</a>
 					</li>
 					<li>
-						<a href="">Interests</a>
+						<a id="interests" href="#link" title="What makes you tick?">Interests</a>
 					</li>
 					<li>
-						<a href="">Health</a>
+						<a id="health" href="#link" title="Unfortunate truth: A diet of twinkies, bacon, and beer is not healthy.">Health</a>
 					</li>
 					<li>
-						<a href="">Academic</a>
+						<a id="academic" href="#link" title="I iz dooing my skool wurk.">Academic</a>
 					</li>
 					<li>
-						<a href="">Professional</a>
+						<a id="professional" href="#link" title="HINT to some software developers: under no circumstances are sandals professional-wear.">Professional</a>
 					</li>
 					<li>
-						<a href="">Fun</a>
+						<a id="fun" href="#link" title="See: Ruby">Fun</a>
 					</li>
 					<li>
-						<a href="">Evil</a>
+						<a id="evil" href="#link" title="Hahaha! Bwahaha! BWAHAHAHAHAHA!">Evil</a>
 					</li>
 				</ul>
 			</div>
 			<div id="main">
 				
 
-				<form id="query">
+				<form id="query" name="query" >
 					<div id="internal_header">Lorem Ipsum Dolor Sit Amet.</div>
 					<p>
 						<label name="label_for_query" for="how_do_you_feel_box">How do you feel today?</label>
-							<input type="text" id="how_do_you_feel_box"/>
+							<input type="text" name="how_do_you_feel_box" id="how_do_you_feel_box"/>
 						
 					</p>
 					<p>
 						<label name="label_for_query" for="want_to_feel_box">How would you like to feel? (choose all that apply)</label>
-						<select id="want_to_feel_box" size="4">
+						<select id="want_to_feel_box" multiple="true" size="4">
 							<option value="numb">Comfortably numb</option>
 							<option value="grumpy">Grumpy as poop, you jerk</option>
 							<option value="happy">Happy like I'm on controlled substances</option>
@@ -54,7 +55,7 @@
 						</select>
 					</p>
 
-					<input id="submit_button" type="submit" value="Feel me!"/>
+					<input id="submit_button" type="button" onclick="validateForm();" value="Feel me!"/>
 
 				</form>
 
