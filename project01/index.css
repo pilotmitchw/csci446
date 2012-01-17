@@ -1,23 +1,22 @@
 #header {
 	position: absolute;
 	width: 100%;
-	height: 35%;
-	top: 0;
+	height: 109px;
 	background-color: #CCCCCC;
-
 }
 
 #header h1 {
-	margin-bottom: -10px;
 	margin-left: 1%;
-	text-weight: bold;
+	letter-spacing: -2px;
+	line-height: 1%;
+	
+
 
 }
 #header h2 {
 	color: #666666;
 	font-size: 85%;
-	margin-left: 1%;
-
+	margin-left: 1.25%;
 }
 
 #links a {
@@ -26,92 +25,109 @@
 	font-family:sans-serif;
 	display: block;
 }
+
+#links a:hover {
+	color: #FF00FF;
+}
+
 body {
-	font-size:150%;
 	background-color: #AAAAAA;
 	font-family: sans-serif;
 }
+
 ul {
 	position: absolute;
 	background-color:black;
 	list-style-type:none;
 	width: 104%;
 	margin-top: 0%;
-	margin-left: -4%;
+	margin-left: -5%;
 }
 
 #links li {
 	float: left;
 	text-align: center;
 	width: 9%;
-	margin: 20px 0px 20px 0px;
+	margin: 10px 5px 10px 0px;
 	display: block;
-
 }
 
+
+
 #floating_body {
-	position: relative;
+	position: absolute;
+	width: 90%;
+
 	border-style:solid;
 	margin-left: 5%;
 	margin-right: 5%;
 	overflow: hidden;
-	height: 60%;
-}
+	height:370px;
 
-#query {
-	position: absolute;
-	margin-left: 1%;
-	margin-bottom: 5%;
-	margin-top: 10%;
-	width: 45%;
-	height: 20%;
 }
 
 #main {
+	position: absolute;
+	margin-top: 109px;
+	height: 220px;
+	width: 100%;
 	background-color: #FCFCFC;
+	padding: 10px;
+}
 
+#internal_header {
+	font-size: 150%;
+	font-weight: bold;
+
+	
 
 }
-#query #how_do_you_feel_box {
-	position: absolute;
-	left: 45%;	
+
+#progress_in_life_box {
+	float: right;
+	margin-right: 25px;
+	background-color: #F0F0FF;
 
 }
-#query #want_to_feel_box {
-	position: absolute;
-	left: 45%;	
+#progress_in_life_box h1{
+	font-size: 125%;
 
-
+}
+#query {
+	float: left;
 }
 
 #query p {
-	width: 40%;
+	width: 200px;
 }
 
 #query #submit_button {
 	position: absolute;
-	left: 20%;
-	margin-top: 50px;
+	left: 250px;
+	margin-top: 40px;
 }
-
-#internal_header {
-	margin-left: 1%;
-}
-#progress_in_life_box {
+#query #how_do_you_feel_box {
 	position: absolute;
-	right: 1%;
-	top: 38%;
-	background-color: #F0F0FF;
+	left: 250;	
+
+}
+#query #want_to_feel_box {
+	position: absolute;
+	left: 250px;	
+	top: 95px;
+
 
 }
 #footer {
 	position:absolute;
-	bottom:0;
+	margin-top: 349px;
 	text-align: center;
 	width: 100%;
-	height: 50px;
+	height: 22px;
 	background-color: #F0F0F0;
 	
 }
+
+
 
 
