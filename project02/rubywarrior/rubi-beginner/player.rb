@@ -8,7 +8,11 @@ class Player
   	end
 
   	if not warrior.feel.empty?
-	  	warrior.attack!  	
+	  	if warrior.feel.captive?
+	  		warrior.rescue!
+	  	else
+	  		warrior.attack!
+	  	end  	
 	elsif warrior.health < 20 and not @being_attacked
 		warrior.rest!
 	else
