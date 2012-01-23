@@ -1,28 +1,22 @@
 class Player
   def play_turn(warrior)
 
-  	if(warrior.feel(:backward).wall?)
-  		@reached_back = true
-  	end
-
   	if not @health_at_end_turn.nil? and @health_at_end_turn > warrior.health
   		@being_attacked = true
   	else
   		@being_attacked = false
   	end
 
-  	if not @reached_back.nil?
-  		@direction = :forward
-  	else
-  		@direction = :backward
-  	end
-  		
-  	if not warrior.feel(@direction).empty?
+	@direction = :forward
+
+  	if warrior.feel(:forward).wall?
+	  		warrior.pivot!(:backward)
+	elsif not warrior.feel(@direction).empty?
 	  	if warrior.feel(@direction).captive?
-	  		warrior.rescue!(@direction)
+	  		warrior.rescue!(@direction)	
 	  	else
 	  		warrior.attack!(@direction)
-	  	end  	
+	  	end  
 	elsif warrior.health < 20 and not @being_attacked
 		warrior.rest!
 	elsif warrior.health < 11 and @being_attacked
