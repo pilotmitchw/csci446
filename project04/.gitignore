@@ -16,4 +16,4 @@
 
 
 # Ignore icons
-/app/views/articles/icons/*
+/app/assets/images/*
