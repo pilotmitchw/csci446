@@ -11,17 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <br/>
+
+  <div class="field_label">
+    <%= f.label :title %>
   </div>
   <div class="field">
-    <%= f.label :author_name %><br />
-    <%= f.text_field :author_name %>
+   <%= f.text_field :title %>
+  </div>
+    
+  
+  <div class="field_label">
+    <%= f.label :author_name %>
   </div>
   <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
+   <%= f.text_field :author_name %>
+  </div>
+  <div class="field_label">
+    <%= f.label :body %>
+  </div>
+  <div class="field">
+   <%= f.text_area :body %>
   </div>
   <div class="actions">
     <%= f.submit %>
