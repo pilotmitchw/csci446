@@ -1,6 +1,6 @@
 <h2 class='subtitle'>...with a name .com hipsters love!</h2>
 
-<table class='article_list'>
+<table id='article_list'>
     <thead>
       <tr>
         <th>Title</th>
@@ -23,8 +23,8 @@
             <td><%= truncate(strip_tags(article.body), length: 20) %></td>
             <td><%= article.created_at.to_s(:datetime) %></td>
             <td><%= link_to image_tag('zoom.png'), article, :title => "view article" %></td>
-            <td><%= link_to 'Edit', edit_article_path(article) %></td>
-            <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+            <td><%= link_to image_tag('application_form_edit.png'), edit_article_path(article), :title => "edit article" %></td>
+            <td><%= link_to image_tag('delete.png'), article, confirm: 'Are you sure?', method: :delete %></td>
           </tr>
         <% end %>
     </tbody>
