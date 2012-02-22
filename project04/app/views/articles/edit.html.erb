@@ -1,6 +1,10 @@
 <h2 class=subtitle>... my cousin works for Bit.ly</h2>
-
+<ul class='menu'>
+  <li>
+    <%= link_to image_tag('arrow_left.png'), session[:edit_redirect], :title => 'back' %>
+    <%= link_to 'back', session[:edit_redirect], :title => 'back' %>
+  </li>
+</ul>
+ <br/>
 <%= render 'form' %>
 
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
