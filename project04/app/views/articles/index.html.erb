@@ -1,29 +1,33 @@
 <h1>Listing articles</h1>
 
 <table>
-  <tr>
-    <th>Title</th>
-    <th>Author name</th>
-    <th>Body</th>
-    <th>Created at</th>
-    <th>Times edited</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @articles.each do |article| %>
-  <tr>
-    <td><%= article.title %></td>
-    <td><%= article.author_name %></td>
-    <td><%= article.body %></td>
-    <td><%= article.created_at %></td>
-    <td><%= article.times_edited %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Author name</th>
+        <th>Body</th>
+        <th>Created at</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tfoot>
+        <td colspan='6'>
+            <p><%= pluralize(@articles.size, 'article') %>.</p>
+        </td>
+    </foot>
+    <tbody>
+        <% @articles.each do |article| %>
+          <tr>
+            <td><%= h article.title %></td>
+            <td><%= h article.author_name %></td>
+            <td><%= truncate(strip_tags(article.body), length: 20) %></td>
+            <td><%= article.created_at.to_s(:datetime) %></td>
+            <td><%= link_to 'Show', article %></td>
+            <td><%= link_to 'Edit', edit_article_path(article) %></td>
+            <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+          </tr>
+        <% end %>
+    </tbody>
 </table>
 
 <br />
