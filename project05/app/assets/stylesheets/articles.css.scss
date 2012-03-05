@@ -1,0 +1,76 @@
+// Place all the styles related to the Articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a
+{
+	text-decoration: none;
+
+}
+
+#new_article
+{
+	float: right;
+}
+h1
+{
+	text-align: center;
+	font-family: sans-serif;
+}
+.subtitle
+{
+	text-align: center;
+	font-family: sans-serif;
+	font-size: 100%;
+}
+body
+{
+	font-family: sans-serif;
+}
+#article_list
+{
+	margin-top: 2em;
+	width: 100%;
+	border-collapse: collapse;
+
+	thead
+	{
+		background-color: #ccc;	
+	}
+
+	tbody
+	{
+		height: 400px;
+		overflow: auto;
+	}
+
+	tr
+	{
+		height: 50px;
+		margin: 10px, 0px;
+		padding: 10px;
+	}
+}
+
+
+
+.menu li
+{
+	list-style: none;
+	float: left;
+	margin-left: 1em;
+
+}
+
+.article_body {
+	line-height: 150%;
+}
+
+.field_label {
+	float: left;
+	margin-right: 100px;
+	width: 10%;
+}
+field {
+	float: left;
+}
