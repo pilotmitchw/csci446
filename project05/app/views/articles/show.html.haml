@@ -1,0 +1,24 @@
+%h2.subtitle ...what's "Articl" in Spanish anyway?
+%p#notice= notice
+%ul.menubar
+  %li= link_to "articles", article_path
+  %li= link_to "authors", "#"
+%ul.menu
+  %li
+    = link_to image_tag('arrow_left.png'), articles_path, :title => 'back to list'
+    = link_to 'list all articles', articles_path, :title => 'back to list'
+  %li
+    = link_to image_tag('application_form_edit.png'), edit_article_path(@article), :title => 'edit article'
+    = link_to 'edit', edit_article_path(@article), :title => 'edit article'
+  %li
+    = link_to image_tag('delete.png'), @article, :confirm => "Are you sure?", :method => :delete, :title => 'delete article'
+    = link_to 'delete article', @article, :confirm => "Are you sure?", :method => :delete, :title => 'delete article'
+  %li
+    = mail_to "", image_tag('email.png'), :subject => @article.title, :body => article_url(@article), :title => 'email article'
+    = mail_to "", "email", :subject => @article.title, :body => article_url(@article), :title => 'email article'
+%br/
+%h3.article_title= @article.title
+%p.byline
+  by #{@article.author_name}. #{pluralize(@article.times_edited, 'update')} since #{@article.created_at.to_s(:short)}
+%p.article_body
+  = simple_format(h(@article.body))
