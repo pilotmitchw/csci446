@@ -1,8 +1,8 @@
 %h2.subtitle ...what's "Articl" in Spanish anyway?
 %p#notice= notice
 %ul.menubar
-  %li= link_to "articles", article_path
-  %li= link_to "authors", "#"
+  %li= link_to "articles", articles_path
+  %li= link_to "authors", authors_path
 %ul.menu
   %li
     = link_to image_tag('arrow_left.png'), articles_path, :title => 'back to list'
@@ -19,6 +19,6 @@
 %br/
 %h3.article_title= @article.title
 %p.byline
-  by #{@article.author_name}. #{pluralize(@article.times_edited, 'update')} since #{@article.created_at.to_s(:short)}
+  by #{@article.author.name}. #{pluralize(@article.times_edited, 'update')} since #{@article.created_at.to_s(:short)}
 %p.article_body
   = simple_format(h(@article.body))

@@ -13,5 +13,12 @@
 */
 
 ul.menubar {
-	
+	list-style-type: none;
+	padding: 20px;
+	background-color: #F0F0F0;
+	li {
+		display: inline;
+		margin-right: 150px;
+
+	}
 }

@@ -1,10 +1,12 @@
-%h2 ...Pat, you betrayed me! I wanted to play with the blocks first!
-
+%h2.subtitle ...Pat, you betrayed me! I wanted to play with the blocks first!
+%ul.menubar
+  %li= link_to "articles", articles_path
+  %li= link_to "authors", authors_path
 #new_author
   \#{link_to image_tag('add.png'), new_author_path, :title => "create new author"}
   \#{link_to 'New Author', new_author_path, :title => "create new author"}
 %p.pagination_bar= will_paginate @authors
-%table#authors_list
+%table#author_list
   %thead
     %tr
       %th Name

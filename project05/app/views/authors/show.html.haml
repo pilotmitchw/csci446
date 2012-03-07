@@ -22,6 +22,27 @@
 
 = image_tag @author.image.url
 
+%table#article_list_for_author
+  %thead
+    %tr
+      %th Title
+      %th Body
+      %th Created at
+      %th
+  %tfoot
+    %td{:colspan => "5"}
+      %p
+        = pluralize(@articles_for_author.size, 'article')
+        \.
+  %tbody
+    - @articles_for_author.each do |article|
+      %tr
+        %td= h article.title
+        %td= truncate(strip_tags(article.body), length: 20)
+        %td= article.created_at.to_s(:datetime)
+        %td= link_to image_tag('zoom.png'), article, :title => "view article"
+        %td= link_to image_tag('application_form_edit.png'), edit_article_path(article), :title => "edit article"
+        %td= link_to image_tag('delete.png'), article, confirm: 'Are you sure?', method: :delete, :title => "delete article"
 %br/
 
 = link_to 'Edit', edit_author_path(@author)
