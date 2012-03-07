@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(:version => 20120307003533) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
-    t.string   "author_name"
     t.text     "body"
     t.date     "created_at",   :null => false
     t.integer  "times_edited"
     t.datetime "updated_at",   :null => false
+    t.integer  "author_id"
   end
 
   create_table "authors", :force => true do |t|
-    t.string   "name"
+    t.string   "name",               :null => false
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
     t.string   "image_file_name"

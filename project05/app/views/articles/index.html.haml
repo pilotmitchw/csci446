@@ -24,7 +24,7 @@
     - @articles.each do |article|
       %tr
         %td= h article.title
-        %td= h article.author_name
+        %td= h article.author.name
         %td= truncate(strip_tags(article.body), length: 20)
         %td= article.created_at.to_s(:datetime)
         %td= link_to image_tag('zoom.png'), article, :title => "view article"

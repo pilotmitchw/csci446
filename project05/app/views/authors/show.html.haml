@@ -1,7 +1,29 @@
+%h2.subtitle ...world domination! Oh, um... No, not really.
+
 %p#notice= notice
-%p
+%ul.menubar
+  %li= link_to "articles", articles_path
+  %li= link_to "authors", authors_path
+%ul.menu
+  %li
+    = link_to image_tag('arrow_left.png'), articles_path, :title => 'back to list'
+    = link_to 'list all authors', authors_path, :title => 'back to list'
+  %li
+    = link_to image_tag('application_form_edit.png'), edit_author_path(@author), :title => 'edit author'
+    = link_to 'edit', edit_author_path(@author), :title => 'edit author'
+  %li
+    = link_to image_tag('delete.png'), @author, :confirm => "Are you sure?", :method => :delete, :title => 'delete author'
+    = link_to 'delete author', @author, :confirm => "Are you sure?", :method => :delete, :title => 'delete author'
+%br/
+
+%h2
   %b Name:
   = @author.name
+
+= image_tag @author.image.url
+
+%br/
+
 = link_to 'Edit', edit_author_path(@author)
 |
 \#{link_to 'Back', authors_path}
