@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_filter :set_edit_return_url, :only => [:edit]
+  before_filter :load_authors, :only => [:new, :edit, :update]
 
   # GET /articles
   # GET /articles.json
@@ -27,6 +28,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -87,5 +89,9 @@ class ArticlesController < ApplicationController
   private
     def set_edit_return_url
       session[:edit_redirect] = request.referer
+    end
+
+    def load_authors
+      @authors = Author.all
     end
 end

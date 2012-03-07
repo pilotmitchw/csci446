@@ -13,9 +13,9 @@
   .field
     = f.text_field :title
   .field_label
-    = f.label :author_name
+    = f.label :author_id
   .field
-    = f.text_field :author_name
+    = f.select :author_id, @authors.collect { |a| [a.name, a.id]}, :include_blank => true
   .field_label
     = f.label :body
   .field

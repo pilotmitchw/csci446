@@ -1,15 +1,22 @@
-%h1 Listing authors
-%table#author_list
-  %tr
-    %th Name
-    %th
-    %th
-    %th
-  - @authors.each do |author|
+%h2 ...Pat, you betrayed me! I wanted to play with the blocks first!
+
+#new_author
+  \#{link_to image_tag('add.png'), new_author_path, :title => "create new author"}
+  \#{link_to 'New Author', new_author_path, :title => "create new author"}
+%p.pagination_bar= will_paginate @authors
+%table#authors_list
+  %thead
     %tr
-      %td= author.name
-      %td= link_to 'Show', author
-      %td= link_to 'Edit', edit_author_path(author)
-      %td= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete
+      %th Name
+      %th 
+      %th 
+      %th 
+  %tbody
+    - @authors.each do |author|
+      %tr
+        %td= author.name
+        %td= link_to image_tag('zoom.png'), author, :title => "view author"
+        %td= link_to image_tag('application_form_edit.png'), edit_author_path(author), :title => "edit author"
+        %td= link_to image_tag('delete.png'), author, confirm: 'Are you sure?', method: :delete, :title => "delete author"
 %br/
-= link_to 'New Author', new_author_path
+%p.pagination_bar= will_paginate @authors
