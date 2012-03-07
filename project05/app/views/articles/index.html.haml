@@ -1,11 +1,12 @@
 %h2.subtitle ...with a name .com hipsters love!
 %ul.menubar
   %li= link_to "articles", article_path
-  %li= link_to "authors", "#"
-<div id="new_article"
-\#{link_to image_tag('add.png'), new_article_path, :title => "create new article"}
-\#{link_to 'New Article', new_article_path, :title => "create new article"}
-%p= will_paginate @articles
+  %li= link_to "authors", author_path
+
+#new_article
+  \#{link_to image_tag('add.png'), new_article_path, :title => "create new article"}
+  \#{link_to 'New Article', new_article_path, :title => "create new article"}
+%p.pagination_bar= will_paginate @articles
 %table#article_list
   %thead
     %tr
@@ -17,7 +18,7 @@
   %tfoot
     %td{:colspan => "6"}
       %p
-        = pluralize(@articles.size, 'article')
+        = pluralize(@total_articles.size, 'article')
         \.
   %tbody
     - @articles.each do |article|
@@ -29,5 +30,7 @@
         %td= link_to image_tag('zoom.png'), article, :title => "view article"
         %td= link_to image_tag('application_form_edit.png'), edit_article_path(article), :title => "edit article"
         %td= link_to image_tag('delete.png'), article, confirm: 'Are you sure?', method: :delete, :title => "delete article"
-%p= will_paginate @articles
+
+
 %br/
+%p.pagination_bar= will_paginate @articles

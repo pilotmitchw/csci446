@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.paginate page: params[:page], order: "title, author_name, body, created_at", per_page: 10
-
+    @total_articles = Article.select(:all)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @articles }
