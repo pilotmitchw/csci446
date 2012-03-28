@@ -1,4 +1,9 @@
 Gamez::Application.routes.draw do
+
+  resource :user_session
+  resource :account, :controller => 'users'
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
