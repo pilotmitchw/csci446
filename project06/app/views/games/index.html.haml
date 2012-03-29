@@ -1,0 +1,14 @@
+
+%table
+  %tr
+    %th Title
+    %th Rating
+  - for game in @games
+    %tr
+      %td= game.title
+      %td= game.rating
+      %td= link_to 'Show', game
+      %td= link_to 'Edit', edit_game_path(game)
+      %td= link_to 'Destroy', game, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Game", new_game_path
