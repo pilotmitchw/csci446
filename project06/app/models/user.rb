@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  ROLES = %w[admin member guest]
   # Include default devise modules. Others available are:
   # :token_authenticatable, :lockable, :timeoutable, :confirmable, :activatable
   devise :database_authenticatable, :registerable,
