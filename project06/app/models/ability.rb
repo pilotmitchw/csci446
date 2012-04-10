@@ -26,13 +26,22 @@ class Ability
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
 
     user ||= User.new
-    if user.role.eql?( "admin" )
-        can :manage, :all
-    elsif user.role.eql( "member" )
+    if user.role.nil?
         can :read, Game
-        can [:update, :delete], Game, :user_id => user.id
-        can :update, User, :user_id => user.id
+        can :manage, User
+        cannot [:update, :destroy, :read], User
     else
-        can :read, Game
+
+        if user.role.eql?( "admin" )
+            can :manage, :all
+        elsif user.role.eql( "member" )
+            can :read, Game
+            can [:update, :delete], Game, :user_id => user.id
+            can :update, User, :user_id => user.id
+        else
+            can :read, Game
+            can [:update, :create, :new], User
+        end
     end
+end
 end

@@ -3,7 +3,7 @@ Gamez::Application.routes.draw do
 
   resources :games
 
-  devise_for :users
+  devise_for :users,  :controllers => { :registrations => "users/registrations" }
 
 
   # The priority is based upon order of creation:
