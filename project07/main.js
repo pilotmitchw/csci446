@@ -6,6 +6,7 @@ var number = 0;
 $(function() {
   updateScore(guessesLeft);
   populateHighScores(highScores);
+  generateRandomNumber();
 });
 
 function generateRandomNumber() {
@@ -20,33 +21,37 @@ function populateHighScores( scores ) {
   }
 }
 
-function test() {
-	generateRandomNumber();
-	alert( number );
-}
-
 function updateScore( score ) {
-  if ( score == 0 )
-  {
-    //Game over, you died. RIP you.
-  }
-
   $('h2#score span#guessesLeft').empty();
   $('h2#score span#guessesLeft').append(score);
 }
 
-function guessNumber() {
-	//alert("ALERT!");
+function giveMessage( the_message ) {
+  $('h2#score span#message').empty();
+  $('h2#score span#message').append(the_message);
+}
 
+function guessNumber() {
   the_guess = $('form#guessTheNumber input#guess').val();
-  alert( the_guess )
-  
-  if( the_guess == number )
+  if ( the_guess == number )
   {
-    
+    alert("You win a score of " + guessesLeft);
+    giveMessage("You survived...this time...");
+  } else if ( the_guess > number ) {
+    giveMessage("Too High");
+  } else if ( the_guess < number ) {
+    giveMessage("Too Low");
   }
 
-
 	--guessesLeft;
-	updateScore( guessesLeft );
+
+  if ( guessesLeft <= 0 ) {
+    updateScore(0);
+    giveMessage(" You looz. Loozer. " );
+  }
+  else
+  {
+    updateScore( guessesLeft );
+  }
+	
 }
